@@ -86,27 +86,36 @@ const CommentsDashboardPage = () => {
     <div className="dashboard-container">
       <div className="dashboard-header">
         <h2>Comments Dashboard</h2>
-        <input
-          type="text"
-          placeholder="Search name, email, comment"
-          value={search}
-          onChange={e => { setSearch(e.target.value); setPage(1); }}
-          className="search-input"
+        <div className="search-input-wrapper">
+          <span className="search-icon">
+            <svg fill="gray" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99c.41.41 1.09.41 1.5 0s.41-1.09 0-1.5l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+          </span>
+          <input
+            type="text"
+            placeholder="Search name, email, comment"
+            value={search}
+            onChange={e => { setSearch(e.target.value); setPage(1); }}
+            className="search-input"
+          />
+        </div>
+      </div>
+      <div className="dashboard-table-card">
+        <CommentsTable
+          comments={paginated}
+          sortBy={sortBy}
+          sortOrder={sortOrder}
+          onSort={handleSort}
+        />
+        <PaginationBar
+          page={page}
+          pageSize={pageSize}
+          total={total}
+          onPageChange={setPage}
+          onPageSizeChange={size => { setPageSize(size); setPage(1); }}
         />
       </div>
-      <CommentsTable
-        comments={paginated}
-        sortBy={sortBy}
-        sortOrder={sortOrder}
-        onSort={handleSort}
-      />
-      <PaginationBar
-        page={page}
-        pageSize={pageSize}
-        total={total}
-        onPageChange={setPage}
-        onPageSizeChange={size => { setPageSize(size); setPage(1); }}
-      />
     </div>
   );
 };

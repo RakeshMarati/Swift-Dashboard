@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = ({ user }) => (
@@ -9,10 +10,10 @@ const Header = ({ user }) => (
     </div>
     <div className="swift-header-right">
       {user && (
-        <>
+        <Link to="/profile" className="swift-user-link">
           <span className="swift-user-name">{user.name}</span>
           <div className="swift-user-avatar">{user.name ? user.name.split(' ').map(n => n[0]).join('').toUpperCase() : ''}</div>
-        </>
+        </Link>
       )}
     </div>
   </header>

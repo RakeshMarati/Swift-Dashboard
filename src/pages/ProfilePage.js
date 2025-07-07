@@ -19,8 +19,10 @@ const ProfilePage = () => {
   if (!user) return <div>Loading...</div>;
 
   return (
-    <div className="profile-container">
-      <button onClick={() => navigate('/dashboard')} className="back-btn">&larr; Back to Dashboard</button>
+    <div className="profile-page-outer">
+      <button onClick={() => navigate('/dashboard')} className="profile-back-btn">
+        <span className="profile-back-arrow">&#8592;</span> <span>Welcome, {user.name}</span>
+      </button>
       <ProfileCard user={user} />
     </div>
   );

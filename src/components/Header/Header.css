@@ -1,0 +1,71 @@
+.swift-header {
+  width: 100%;
+  background: #232946;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 64px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.swift-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.swift-logo {
+  height: 36px;
+  width: 36px;
+  background: #fff;
+  border-radius: 6px;
+  object-fit: contain;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.swift-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-left: 0.3rem;
+}
+.swift-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.swift-user-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+}
+.swift-user-avatar {
+  width: 40px;
+  height: 40px;
+  background: #b8c1ec;
+  color: #232946;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 0.2rem;
+}
+@media (max-width: 700px) {
+  .swift-header {
+    padding: 0 1rem;
+    height: 54px;
+  }
+  .swift-title {
+    font-size: 1.1rem;
+  }
+  .swift-user-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+} 

@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import ProfilePage from './pages/ProfilePage';
+import CommentsDashboardPage from './pages/CommentsDashboardPage';
+import Header from './components/Header/Header';
 import './App.css';
 
+const USER_API = 'https://jsonplaceholder.typicode.com/users';
+
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch(USER_API)
+      .then(res => res.json())
+      .then(data => setUser(data[0]))
+      .catch(() => setUser(null));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header user={user} />
+      <Routes>
+        <Route path="/dashboard" element={<CommentsDashboardPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/" element={<Navigate to="/dashboard" />} />
+      </Routes>
+    </Router>
   );
 }
 

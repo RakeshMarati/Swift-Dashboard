@@ -1,0 +1,23 @@
+.comments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+.comments-table th, .comments-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+.comments-table th {
+  background: #f3f4f6;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+.comments-table th:last-child, .comments-table td:last-child {
+  cursor: default;
+}
+.comments-table tr:hover {
+  background: #f9fafb;
+} 

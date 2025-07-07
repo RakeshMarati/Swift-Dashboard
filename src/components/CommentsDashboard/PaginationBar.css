@@ -1,0 +1,26 @@
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.pagination-bar button {
+  background: #232946;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pagination-bar button:disabled {
+  background: #b8c1ec;
+  cursor: not-allowed;
+}
+.pagination-bar select {
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+} 

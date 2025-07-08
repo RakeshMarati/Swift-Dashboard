@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# SWIFT Front-End Internship Assignment
+
+**Note:** The assignment mentions searching by `phone` in the comments dashboard, but the comments API (`https://jsonplaceholder.typicode.com/comments`) does not include a `phone` field. Therefore, the search functionality is implemented for `name`, `email`, and `comment` fields, which are present in the API.
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
